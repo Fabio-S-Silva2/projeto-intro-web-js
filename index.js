@@ -1,5 +1,3 @@
-
-
 const curso = [
   {
     nomeCurso: "APIsRest",
@@ -96,7 +94,7 @@ const arrayTurma = [
     concluida: false,
   },
 ];
- /////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 const arrayEstudantes = [
   {
     estudante: "Jean Carlo",
@@ -165,12 +163,12 @@ const arrayEstudantes = [
 
 ///Função de parcelamento.////////////////////////////
 
-const carrinhoCursos = [];
+const carrinhoCursos = [500, 500, 1000];
 
 const adcCarrinho = (nomeDoCurso) => {
   const curso = buscarCurso(nomeDoCurso);
   carrinhoCursos.push(curso.valor);
-
+  console.log(carrinhoCursos);
   return carrinhoCursos;
 };
 
@@ -204,22 +202,20 @@ const parcelarCurso = (carrinhoCursos, parcela) => {
   if (parcela <= 2) {
     valorTotal = valorTotal - valorTotal * 0.2;
     valorPorParcela = valorTotal / parcela;
-    console.log(
-      `O valor do pagamento é de  ${valorTotal} com 20% de desconto, parcelado em ${parcela}x de R$ ${valorPorParcela}. `
-    );
+    let msg = `O valor do pagamento é de  ${valorTotal} com 20% de desconto, parcelado em ${parcela}x de R$ ${valorPorParcela}.`;
+    return msg;
   } else if (parcela >= 3 && parcela <= 10) {
     valorTotal = valorTotal;
     valorPorParcela = valorTotal / parcela;
-    console.log(
-      `O valor do pagamento é de ${valorTotal},parcelado em ${parcela}x de R$ ${valorPorParcela}. `
-    );
+    msg = `O valor do pagamento é de ${valorTotal},parcelado em ${parcela}x de R$ ${valorPorParcela}. `;
+    return msg;
   } else {
-    console.log(
-      `Desculpa! Não trabalhamos acima de 10 parcelas \n Por favor! Escolha um número de parcelas entre 1 e 10.`
-    );
+    msg = `Desculpa! Não trabalhamos acima de 10 parcelas \n Por favor! Escolha um número de parcelas entre 1 e 10.`;
+    return msg;
   }
 };
-console.log(parcelarCurso(carrinhoCursos, 1));
+
+console.log(parcelarCurso(carrinhoCursos, 11));
 
 ///Função para buscar cursos////////////////////////
 const buscarCurso = (procurarCurso) => {
@@ -233,12 +229,11 @@ const buscarCurso = (procurarCurso) => {
     }
   }
 };
-console.log(buscarCurso());
+buscarCurso();
 
 /// Função para buscar turma //////////////////
 const buscarTurma = (procurarTurma) => {
-
-  let resultado;
+  let resultado = {};
   for (let cadaTurma of arrayTurma) {
     if (cadaTurma.turma === procurarTurma) {
       resultado = cadaTurma;
@@ -246,6 +241,7 @@ const buscarTurma = (procurarTurma) => {
     }
   }
 };
+buscarTurma("Hipátia");
 
 /// Função para buscar estudante /////////////////
 const buscarEstudante = (procurarEstudante) => {
@@ -260,8 +256,7 @@ const buscarEstudante = (procurarEstudante) => {
 
 /// Função matricular /////////////
 const matricular = (nome, curso, turma, numParcelas) => {
-
-  let valorCurso = buscarCurso(curso);
+  let valorCurso = buscarCurso(curso.valor);
   let valorTotal = 0;
   let valorPorParcela = 0;
   let desconto = false;
@@ -288,7 +283,6 @@ const matricular = (nome, curso, turma, numParcelas) => {
   arrayEstudantes.push(novoAlun);
 
   console.log(arrayEstudantes);
-  console.log(
-    `Aluno matriculado \n Nome:${nome} \n Curso:${curso} \n Turma: ${turma}`
-  );
+  a;
+  return `Aluno matriculado \n Nome:${nome} \n Curso:${curso} \n Turma: ${turma}`;
 };

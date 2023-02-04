@@ -578,3 +578,10 @@ a:link:active {
     margin-top:5vh ;
     font-size: 130%;
 }
+#adicionarCurso{
+    background-color:rgb(249, 206, 63) ;
+    margin-top: 1vh;
+    width: 13vw;
+    border:0;
+    text-decoration:underline;
+}
