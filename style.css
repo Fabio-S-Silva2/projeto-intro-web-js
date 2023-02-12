@@ -1,0 +1,643 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+/* Container geral do body*/
+.container {
+    min-height: 168vh;
+    min-width: 98vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    height: 9.8vh;
+    width: 98vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+#logo {
+    width: 25vw;
+    margin-left: 15%;
+}
+
+.links-fixos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+main {
+    width: 98vw;
+    flex-grow: 1;
+    margin: 0 1vw;
+}
+
+.main-height {
+    height: 63vh;
+    background-image: url("./img/background-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(249, 206, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 130%;
+    flex-direction: column;
+}
+
+
+
+.conheca {
+    background-color: black;
+    color: white;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.3em;
+}
+
+.conheca:hover {
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 1em;
+
+}
+
+.conheca:active {
+    background-color: rgb(214, 27, 195);
+}
+
+
+#whats {
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin-left: 43vw;
+    height: 5vh;
+    width: 4vw;
+    position: fixed;
+    margin-top: 13%;
+}
+
+.main-down {
+    height: 102.2vh;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#sobreNos {
+    margin-top: 2%;
+    margin-block-end: 1%;
+}
+
+#loremSobreNos {
+    font-size: 80%;
+    max-width: 60%;
+}
+
+#depoimento {
+    margin-top: 4%;
+}
+
+.cardDepoi {
+    font-size: 60%;
+    text-align: center;
+    max-height: 20%;
+    max-width: 80%;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.divCard {
+    height: 130%;
+    font-size: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10% 0 5% 5%;
+    background-color: bisque;
+    border-radius: 5%;
+}
+
+.imgDepoi {
+    max-height: 40%;
+    max-width: 30%;
+}
+
+footer {
+    background-color: rgb(249, 206, 63);
+    width: 98vw;
+    margin: 0 1vw;
+    height: 59vh;
+
+}
+
+.footer {
+    margin: 0 13%;
+    gap: 1%;
+    height: 56vh;
+    font-size: 140%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+#logoFooter {
+    width: 80%;
+    margin-left: 4%;
+    margin-top: 4%;
+    margin-block-end: 8%;
+}
+
+#imgMap {
+    max-height: 80%;
+    max-width: 80%;
+    margin-left: 4%;
+    margin-top: 9%;
+
+}
+
+#pDoEndereco {
+    font-size: 80%;
+    margin-left: 3%;
+}
+
+.divfooter {
+
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textLink {
+    font-size: 80%;
+    margin-top: 10vh;
+}
+
+.ulFooter {
+    height: 98%;
+    font-size: 50%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    gap: 1em;
+
+}
+
+#redesSociais {
+    margin-top: 10vh;
+    margin-bottom: 10%;
+}
+
+.areaAdm {
+    margin-top: 10%;
+    font-size: 90%;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:link:hover {
+    background-color: red;
+}
+
+a:link:active {
+    background-color: red;
+}
+
+
+/*Alterações necessárias para a pagina Curso*/
+
+
+.main-heightPgCurso {
+    height: 63vh;
+    background-color: rgb(249, 206, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 130%;
+}
+
+.divsCardPgCurso {
+    background-color: azure;
+    font-size: 65%;
+    margin: 3%;
+    height: 60%;
+    width: 15%;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.textCardCurso {
+    margin-top: 10%;
+}
+
+#buttonCurso {
+    position: absolute;
+    margin-top: 25%;
+}
+
+#whatsCurso {
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin-left: 12vw;
+    height: 5vh;
+    width: 4vw;
+    position: fixed;
+    margin-top: 13%;
+}
+
+.main-downCurso {
+    height: 102.2vh;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+}
+
+.cardCurso {
+    height: 30%;
+    width: 60%;
+    display: flex;
+    color: black;
+    background-color: white;
+    align-items: center;
+    justify-items: center;
+    margin-top: 1%;
+    border-radius: 1em;
+    font-size: 90%;
+}
+
+.modulos {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 30%;
+    margin-left: 10%;
+}
+
+.paragrafoModulos {
+    margin-top: 7%;
+}
+
+/* Alterações necessárias para Contato */
+
+.bodyContato {
+    min-height: 135vh;
+    min-width: 98vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContato {
+    background-color: black;
+    height: 95vh;
+    width: 98vw;
+    display: flex;
+    margin: 0 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#divParaForm {
+    height: 60vh;
+    width: 25%;
+    color: black;
+    background-color: aliceblue;
+    justify-items: center;
+    border-radius: 0.5em;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#formContato {
+    max-width: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nome,
+#email {
+    border-radius: 0.2em;
+    width: 26vh;
+}
+
+#mensagem {
+    width: 26vh;
+    border-radius: 0.2em
+}
+
+#enviar {
+    border-radius: 0.2em;
+    height: 5vh;
+    width: 26vh;
+    border: none;
+    background-color: rgb(249, 206, 63);
+    margin-top: 4%;
+}
+
+.paragrafoForm {
+    margin-top: 10%;
+}
+
+.imputForms {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+}
+
+.whatsContato {
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin-left: 30vw;
+    height: 5vh;
+    width: 4vw;
+    position: fixed;
+    margin-top: 13%;
+
+}
+
+.footerContato {
+    margin: 0 13%;
+    gap: 1%;
+    height: 62vh;
+    font-size: 140%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
+}
+
+#logoContato {
+    width: 22vw;
+    margin-left: 15%;
+}
+
+/* Alterações necessárias para Adm */
+
+
+.bodyAdm {
+    min-height: 113.4vh;
+    min-width: 98vw;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.mainAdm {
+    background-color: black;
+    height: 79.8vh;
+    width: 98vw;
+    display: flex;
+    margin: 0 1vw;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 2px black;
+}
+
+#primeiraDiv {
+    height: 79.8vh;
+    width: 28vw;
+    color: aliceblue;
+}
+
+#listaAdm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 50vh;
+    justify-content: space-evenly;
+
+}
+
+#segundaDiv {
+    background-color: rgb(249, 206, 63);
+    height: 79.8vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#imputBuscar {
+    position: relative;
+    margin-top: 10vh;
+}
+
+#formeAdm {
+    height: 19.8vh;
+}
+
+.exibirCardCurso {
+    height: 60vh;
+}
+
+#buscar {
+    color: azure;
+    background-color: rgb(4, 5, 5);
+    font: bold 80px;
+    border-radius: 0.2em;
+}
+
+#msgArea {
+    border-radius: 0.2em;
+    height: 4vh;
+    width: 18vw;
+
+}
+
+#primarArea {
+    display: flex;
+
+}
+
+.tag-A-Adm {
+    color: aliceblue;
+    font-size: large;
+}
+
+/* Alterações necessárias para Matrícula*/
+
+#segundaDivMatric {
+    background-color: rgb(249, 206, 63);
+    height: 79.8vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+}
+
+#formeMatricula {
+    height: 79.8vh;
+    width: 35vw;
+}
+
+#imputMatricular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#matricular {
+    margin-top: 4vh;
+    min-width: 20vw;
+    height: 5vh;
+    border-radius: 0.2em;
+    background-color: black;
+    color: white;
+    font-size: 85%;
+}
+
+.imputFormsMt {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    font-size: 95%;
+
+}
+
+.subTitulo {
+    margin-top: 15%;
+}
+
+#msgAlunoMatriculado {
+    height: 79.8vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.sectionMatricula {
+    display: flex;
+    font-size: 95%;
+
+}
+
+#imgYes {
+    position: relative;
+    height: 7vh;
+    width: 3vw;
+    margin: 1.9em 0 0 1em;
+}
+
+#msgRetornada {
+    height: 60vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+/* Alterações necessária para financeiro*/
+#relatNome {
+    margin-block-start: 1.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#buscarI {
+    border-radius: 0.2em;
+    height: 5vh;
+    width: 26vh;
+    border: none;
+    background-color: rgb(2, 2, 2);
+    margin-top: 4%;
+    color: aliceblue;
+}
+
+#h2Valor {
+    margin-top: 5vh;
+    font-size: 130%;
+}
+
+#adicionarCurso {
+    background-color: rgb(249, 206, 63);
+    margin-top: 1vh;
+    width: 13vw;
+    border: 0;
+    text-decoration: underline;
+}
+
+#exibirTurma {
+    height: 60vh;
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+
+#cardsTurmas {
+    width: 22%;
+    height: 42%;
+    font-size: 68%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 0.3em;
+    justify-items: center;
+}
+
+#titulo {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2%;
+
+}
+
+.inforTurma {
+    display: grid;
+    margin-inline-start: 1em;
+    font-size: 80%;
+    margin-top: 9%;
+    row-gap: 9%;
+}
+
+.imputFormsF {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    font-size: 95%;
+}
+
+#msgRetornadaF {
+    margin-top: 10%;
+    height: 60vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body class="bodyAdm">
+    <section>
+      <header>
+        <article>
+          <img src="img/logo 1.png" alt="LabEscola logo" id="logoContato" />
+        </article>
+        <article>
+          <nav>
+            <ul class="links-fixos">
+              <section>
+                <li>
+                  <a href="index.html"> <strong>Home</strong> </a>
+                </li>
+              </section>
+
+              <section>
+                <li>
+                  <a href="cursos.html"><strong>Cursos</strong></a>
+                </li>
+              </section>
+
+              <section>
+                <li>
+                  <a href="contato.html"><strong>Contato</strong></a>
+                </li>
+              </section>
+
+              <section>
+                <li>
+                  <a href="adm.html"><strong>Area ADM</strong></a>
+                </li>
+              </section>
+            </ul>
+          </nav>
+        </article>
+      </header>
+
+      <main class="mainAdm">
+        <section id="primeiraDiv">
+          <nav>
+            <ul id="listaAdm">
+              <a class="tag-A-Adm" href="./adm.html">Turmas</a>
+              <a class="tag-A-Adm" href="./amatricula.html">Matrículas</a>
+              <a class="tag-A-Adm" href="./financeiro.html"
+                >Financeiro Alunos</a
+              >
+            </ul>
+          </nav>
+        </section>
+        <section id="segundaDiv">
+          <form autocomplete="off" action="#" id="formeAdm">
+            <section id="imputBuscar">
+              <p id="primarArea">
+                <input type="text" id="msgArea" ></input>
+                <button onclick="buscarTurma()" id="buscar">
+                  <strong>Buscar</strong>
+                </button>
+              </p>
+            </section>
+          </form>
+          <section id="exibirTurma">
+            
+          </section>
+        </section>
+      </main>
+      <footer>
+        <section class="footerContato">
+          <section class="divfooter">
+            <a
+              ><img src="img/logo 1.png" alt="LabEscola logo" id="logoFooter"
+            /></a>
+            <h5>Endereço</h5>
+            <a target="_blank" href="https://goo.gl/maps/C1qckULowxiZVs6o7"
+              ><img
+                src="./img/Rectangle 4.png"
+                alt="imagem endereço"
+                id="imgMap" />
+              <p id="pDoEndereco">
+                R. Pais Leme, 215 - Pinheiros, São Paulo - SP, 05424-150
+              </p>
+            </a>
+          </section>
+          <section class="divfooter">
+            <nav>
+              <h5 class="textLink">Links</h5>
+              <ul class="ulFooter">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cursos.html">Cursos</a></li>
+                <li>
+                  <a target="_blank" href="https://www.labenu.com.br/blog/home"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.labenu.com.br/blog/contato"
+                    >Fale conosco</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.labenu.com.br/termos-condicoes"
+                    >Termos e condições</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.labenu.com.br/politica-de-privacidade"
+                    >Política de privacidade</a
+                  >
+                </li>
+                <li>
+                  <a target="_blank" href="https://www.labenu.com.br/faq"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <section class="divfooter">
+            <nav>
+              <h5 id="redesSociais" class="textLink">Redes sociais</h5>
+              <ul>
+                <a target="_blank" href="https://twitter.com/labenu_"
+                  ><img src="./img/Vector (2).png" alt="imagem"
+                /></a>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/school/labenu/?viewAsMember=true"
+                  ><img src="./img/Vector (3).png" alt="imagem"
+                /></a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063626798454"
+                  ><img src="./img/Vector (4).png" alt="imagem"
+                /></a>
+                <a target="_blank" href="https://www.instagram.com/labenu_/"
+                  ><img src="./img/Vector (5).png" alt="imagem"
+                /></a>
+              </ul>
+            </nav>
+          </section>
+          <section class="divfooter">
+            <section>
+              <h5 class="textLink">Área restrita</h5>
+              <p class="areaAdm">Área administrativa</p>
+              <p class="areaAdm">Área do aluno</p>
+            </section>
+          </section>
+        </section>
+      </footer>
+    </section>
+  </body>
+</html>
