@@ -1,6 +1,6 @@
 const curso = [
   {
-    nomeCurso: "APIsRest",
+    nomeCurso: "APIs e Rest",
     descricao: "Aprenda tudo dentro de 6 mês",
     duracao: "Meses 6",
     valor: 2000,
@@ -163,16 +163,23 @@ const arrayEstudantes = [
 
 ///Função de parcelamento.////////////////////////////
 
-const carrinhoCursos = [500, 500, 1000];
+let carrinhoCursos = [];
 
-const adcCarrinho = (nomeDoCurso) => {
-  const curso = buscarCurso(nomeDoCurso);
-  carrinhoCursos.push(curso.valor);
+const adcCarrinho = (procuraCurso) => {
+  procuraCurso = document.getElementById("cursoI").value;
+  const valorCurso = buscarCurso(procuraCurso);
+  console.log(valorCurso);
+
+  document.getElementById("cursoI").value = ``;
   console.log(carrinhoCursos);
-  return carrinhoCursos;
+  return carrinhoCursos.push(valorCurso.valor);
 };
 
-const parcelarCurso = (carrinhoCursos, parcela) => {
+const parcelarCurso = () => {
+  let parcela = document.getElementById("numeroParcelaF").value;
+  document.getElementById("imputFormsF").innerHTML = ``;
+  let msg = document.getElementById("imputFormsF");
+
   let valorTotal = 0;
   let valorPorParcela = 0;
   let desconto = 0;
@@ -199,90 +206,172 @@ const parcelarCurso = (carrinhoCursos, parcela) => {
     valorTotal = carrinhoCursos[0];
   }
 
-  if (parcela <= 2) {
+  if (Number(parcela) <= 2) {
     valorTotal = valorTotal - valorTotal * 0.2;
-    valorPorParcela = valorTotal / parcela;
-    let msg = `O valor do pagamento é de  ${valorTotal} com 20% de desconto, parcelado em ${parcela}x de R$ ${valorPorParcela}.`;
-    return msg;
-  } else if (parcela >= 3 && parcela <= 10) {
+    valorPorParcela = valorTotal / Number(parcela);
+
+    document.getElementById("numeroParcelaF").value = ``;
+
+    return (msg.innerHTML = `<h2 id="h2Valor"><strong>Valor</strong></h2>
+    <p> O valor do pagamento é de  ${valorTotal} com 20% de desconto, parcelado em ${Number(
+      parcela
+    )}x de R$ ${valorPorParcela}.</P>`);
+  } else if (Number(parcela) >= 3 && Number(parcela) <= 10) {
     valorTotal = valorTotal;
-    valorPorParcela = valorTotal / parcela;
-    msg = `O valor do pagamento é de ${valorTotal},parcelado em ${parcela}x de R$ ${valorPorParcela}. `;
-    return msg;
+    valorPorParcela = valorTotal / Number(parcela);
+
+    document.getElementById("numeroParcelaF").value = ``;
+
+    return (msg.innerHTML = `<h2 id="h2Valor"><strong>Valor</strong></h2>
+    <P> O valor do pagamento é de ${valorTotal},parcelado em ${Number(
+      parcela
+    )}x de R$ ${valorPorParcela}.</p> `);
   } else {
-    msg = `Desculpa! Não trabalhamos acima de 10 parcelas \n Por favor! Escolha um número de parcelas entre 1 e 10.`;
-    return msg;
+    document.getElementById("numeroParcelaF").value = ``;
+    return (msg.innerHTML = `<h2 id="h2Valor"><strong>Valor</strong></h2>
+      <p>Desculpa! Não trabalhamos acima de 10 parcelas \n Por favor! Escolha um número de parcelas entre 1 e 10.</p>`);
   }
 };
-
-console.log(parcelarCurso(carrinhoCursos, 11));
-
-///Função para buscar cursos////////////////////////
-const buscarCurso = (procurarCurso) => {
-  let resultado;
-  for (let cadaCurso of curso) {
-    if (cadaCurso.nomeCurso === procurarCurso) {
-      resultado = cadaCurso;
-      return resultado;
-    } else {
-      return `opção invalida ou curso não existente, ${procurarCurso}`;
-    }
-  }
-};
-buscarCurso();
 
 /// Função para buscar turma //////////////////
-const buscarTurma = (procurarTurma) => {
-  let resultado = {};
-  for (let cadaTurma of arrayTurma) {
-    if (cadaTurma.turma === procurarTurma) {
-      resultado = cadaTurma;
-      return resultado;
+
+const buscarTurma = (input) => {
+  input = document.getElementById("msgArea").value;
+  let exibirTurma = document.getElementById("exibirTurma");
+  exibirTurma.innerHTML = "";
+  arrayTurma.filter((cadaTurma) => {
+    if (cadaTurma.turma.toLocaleLowerCase().includes(input.toLowerCase())) {
+      let turmaconCluida =
+        cadaTurma.concluida === true ? (condicao = `sim`) : (condicao = "não");
+      exibirTurma.innerHTML += `<section id="cardsTurmas">
+      <section id="titulo">
+      <h3>${cadaTurma.turma}</h3>
+      </section>
+      <section class="inforTurma">
+      <p><strong>Curso:</strong>${cadaTurma.curso}</p>
+      <p><strong>Início:</strong>${cadaTurma.inicio}</p>
+      <p><strong>Término:</strong>${cadaTurma.terminio}</p>
+      <p><strong>Alunos:</strong>${cadaTurma.numeroAlunos}</p>
+      <p><strong>Período</strong>:${cadaTurma.periodo}</p>
+      <p><strong>Concluído:</strong>${turmaconCluida}</p>
+      </section>
+      </section>`;
+      document.getElementById("msgArea").value = ``;
+      return cadaTurma;
     }
-  }
+  });
 };
-buscarTurma("Hipátia");
 
 /// Função para buscar estudante /////////////////
 const buscarEstudante = (procurarEstudante) => {
-  let resultado;
+  document.getElementById("msgRetornadaF").innerHTML=``;
+  procurarEstudante = document.getElementById("alunoF").value;
+  let msg = document.getElementById("msgRetornadaF");
+  let resultado = {};
   for (let cadaAluno of arrayEstudantes) {
-    if (cadaAluno.estudante === procurarEstudante) {
+    if (
+      cadaAluno.estudante.toLocaleLowerCase() ===
+      procurarEstudante.toLocaleLowerCase()
+    ) {
       resultado = cadaAluno;
-      return resultado;
+      resultado.desconto === true
+        ? (resultado.desconto = `sim`)
+        : (resultado.desconto = `não`);
+      document.getElementById("alunoF").value = ``;
+      console.log(resultado);
+      return (msg.innerHTML += `<p><strong>Aluno:</strong>${resultado.estudante}</p>
+      <p><strong>Turma:</strong>${resultado.turma}</p>
+      <p><strong>Curso:</strong>${resultado.curso}</p>
+      <p><strong>Valor total:</strong>${resultado.valor}</p>
+      <p><strong>Valor parcela:</strong>${resultado.valorParcela}</p>
+      <p><strong>N.° parcela:</strong>${resultado.nParcelas}</p>`);
+    }
+  }
+};
+
+///Função para buscar cursos////////////////////////
+const buscarCurso = (procuraCurso) => {
+  procuraCurso = document.getElementById("cursoI").value;
+  procuraCurso.innerHTML = ``;
+  for (cadaCurso of curso) {
+    if (cadaCurso.nomeCurso.toLowerCase() === procuraCurso.toLowerCase()) {
+      return cadaCurso;
     }
   }
 };
 
 /// Função matricular /////////////
-const matricular = (nome, curso, turma, numParcelas) => {
-  let valorCurso = buscarCurso(curso.valor);
+
+const matricularAluno = (nome, procuraCurso, turma, numParcelas) => {
+  nome = document.getElementById("nomeI").value;
+  turma = document.getElementById("turmaI").value;
+  numParcelas = Number(document.getElementById("parcelaI").value);
+  let exibir = document.getElementById("msgAlunoMatriculado");
+  let valorCurso = buscarCurso(procuraCurso);
+
   let valorTotal = 0;
   let valorPorParcela = 0;
-  let desconto = false;
+  let desconto = `não`;
 
   if (numParcelas > 0 && numParcelas <= 2) {
-    desconto = true;
+    desconto = `sim`;
     valorTotal = valorCurso.valor - valorCurso.valor * 0.2;
     valorPorParcela = valorTotal / numParcelas;
+
+    let novoAlun = {
+      estudante: nome,
+      turma: turma,
+      curso: valorCurso.nomeCurso,
+      valor: valorCurso.valor,
+      nParcelas: numParcelas,
+      desconto: desconto,
+      valorParcela: valorPorParcela,
+    };
+    exibir.innerHTML += `<section class="sectionMatricula">
+    <h2 class="subTitulo"><strong>Aluno matriculado</strong></h2>
+    <img id="imgYes" src="./img/Yes.png" alt="imagem" />
+  </section>
+  <section id="msgRetornada">
+   <p>Aluno Matriculado</p>
+   <p>Nome:${nome}</P>
+   <p>Curso:${valorCurso.nomeCurso}</P>
+   <p>Turma:${turma}</p>
+  </section>`;
+    document.getElementById("nomeI").value = ``;
+    document.getElementById("turmaI").value = ``;
+    document.getElementById("parcelaI").value = ``;
+    document.getElementById("cursoI").value = ``;
+
+    return arrayEstudantes.push(novoAlun);
   } else {
     valorTotal = valorCurso.valor;
     valorPorParcela = valorTotal / numParcelas;
+
+    let novoAlun = {
+      estudante: nome,
+      turma: turma,
+      curso: valorCurso.nomeCurso,
+      valor: valorCurso.valor,
+      nParcelas: numParcelas,
+      desconto: desconto,
+      valorParcela: valorPorParcela,
+    };
+
+    exibir.innerHTML += `<section class="sectionMatricula">
+    <h2 class="subTitulo"><strong>Aluno matriculado</strong></h2>
+    <img id="imgYes" src="./img/Yes.png" alt="imagem" />
+  </section>
+  <section id="msgRetornada">
+   <p>Aluno Matriculado</p>
+   <p>Nome:${nome}</P>
+   <p>Curso:${valorCurso.nomeCurso}</P>
+   <p>Turma:${turma}</p>
+  </section>`;
+    document.getElementById("nomeI").value = ``;
+    document.getElementById("turmaI").value = ``;
+    document.getElementById("parcelaI").value = ``;
+    document.getElementById("cursoI").value = ``;
+    console.log(arrayEstudantes);
+    return arrayEstudantes.push(novoAlun);
   }
-
-  let novoAlun = {
-    estudante: nome,
-    turma: turma,
-    curso: curso,
-    valor: valorCurso.valor,
-    nParcelas: numParcelas,
-    desconto: desconto,
-    valorParcela: valorPorParcela,
-  };
-
-  arrayEstudantes.push(novoAlun);
-
-  console.log(arrayEstudantes);
-  a;
-  return `Aluno matriculado \n Nome:${nome} \n Curso:${curso} \n Turma: ${turma}`;
 };

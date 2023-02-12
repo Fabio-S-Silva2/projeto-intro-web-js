@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
   </head>
   <body class="bodyAdm">
     <section>
@@ -79,18 +80,14 @@
                   </label>
                 </p>
                 <input type="text" nome="parcelaI" id="parcelaI" />
-                <button type="submit" id="matricular">
+                <button onClick="matricularAluno()" id="matricular">Matricular aluno</button>
                   <strong>Matricular aluno</strong>
                 </button>
               </section>
             </section>
           </form>
           <section id="msgAlunoMatriculado">
-            <section class="sectionMatricula">
-              <h2 class="subTitulo"><strong>Aluno matriculado</strong></h2>
-              <img id="imgYes" src="./img/Yes.png" alt="imagem" />
-            </section>
-            <section id="msgRetornada"></section>
+            
           </section>
         </section>
       </main>

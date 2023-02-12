@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
   </head>
   <body class="bodyAdm">
     <section>
@@ -50,7 +51,9 @@
             <ul id="listaAdm">
               <a class="tag-A-Adm" href="./adm.html">Turmas</a>
               <a class="tag-A-Adm" href="./amatricula.html">Matrículas</a>
-              <a class="tag-A-Adm" href="./financeiro.html">Financeiro Alunos</a>
+              <a class="tag-A-Adm" href="./financeiro.html"
+                >Financeiro Alunos</a
+              >
             </ul>
           </nav>
         </section>
@@ -58,12 +61,16 @@
           <form autocomplete="off" action="#" id="formeAdm">
             <section id="imputBuscar">
               <p id="primarArea">
-                <textarea name="msg" id="msgArea" cols="18" rows="1"></textarea
-                ><button type="submit" id="buscar"><strong>Buscar</strong> </button>
+                <input type="text" id="msgArea" ></input>
+                <button onclick="buscarTurma()" id="buscar">
+                  <strong>Buscar</strong>
+                </button>
               </p>
             </section>
           </form>
-          <section class="exibirCardCurso"></section>
+          <section id="exibirTurma">
+            
+          </section>
         </section>
       </main>
       <footer>

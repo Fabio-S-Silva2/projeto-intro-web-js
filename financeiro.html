@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="/index.js"></script>
   </head>
   <body class="bodyAdm">
     <section>
@@ -59,30 +60,26 @@
         <section id="segundaDivMatric">
           <form autocomplete="off" action="#" id="formeMatricula">
             <section id="imputMatricular">
-              <section class="imputFormsMt">
+              <section class="imputFormsF">
                 <h2 class="subTitulo"><strong>Financeiro</strong></h2>
                 <p class="paragrafoForm">
                   <label for="cursoI"><strong>Curso</strong> </label>
                 </p>
                 <input type="text" nome="cursoI" id="cursoI" />
-                <button type="submit" id="adicionarCurso">
-                  Adicionar outro curso
+                <button onclick="adcCarrinho()" id="adicionarCurso">
+                  Adicionar curso
                 </button>
                 <p class="paragrafoForm">
-                  <label for="turmaI"
+                  <label for="numeroParcelaF"
                     ><strong>Número de parcelas</strong>
                   </label>
                 </p>
-                <input type="text" nome="turmaI" id="turmaI" />
+                <input type="text" nome="numeroParcelaF" id="numeroParcelaF" />
 
-                <button type="submit" id="matricular">
-                  <strong>Matricular aluno</strong>
+                <button onclick="parcelarCurso()" id="matricular">
+                  <strong>Ver valor</strong>
                 </button>
-                <h2 id="h2Valor"><strong>Valor</strong></h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Obcaecati, quia!
-                </p>
+                <section id="imputFormsF"></section>
               </section>
             </section>
           </form>
@@ -90,18 +87,19 @@
             <section class="sectionMatricula">
               <h2 class="subTitulo"><strong>Relatório do aluno</strong></h2>
             </section>
-            <section id="relatNome">
-              <p class="paragrafoForm">
-                <label for="parcelaI"><strong>Nome</strong> </label>
-              </p>
-              <input type="text" nome="parcelaI" id="parcelaI" />
-              <p>
-                <button type="submit" id="buscarI">
+            <form autocomplete="off" action="#">
+              <section id="relatNome">
+                <p class="paragrafoForm">
+                  <label for="alunoF"><strong>Nome</strong> </label>
+                </p>
+                <input type="text" nome="parcelaI" id="alunoF" />
+
+                <button onclick="buscarEstudante()" id="buscarI">
                   <strong>Buscar</strong>
                 </button>
-              </p>
-            </section>
-            <section id="msgRetornada"></section>
+              </section>
+            </form>
+            <section id="msgRetornadaF"></section>
           </section>
         </section>
       </main>
